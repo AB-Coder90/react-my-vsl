@@ -1,85 +1,8 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
-import { Button } from "@/components/ui/button"
-
-export default function Navbar() {
-  return (
-    <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6">
-      <Sheet>
-        <SheetTrigger asChild>
-          <Button variant="outline" size="icon" className="lg:hidden">
-            <MenuIcon className="h-6 w-6" />
-            <span className="sr-only">Toggle navigation menu</span>
-          </Button>
-        </SheetTrigger>
-        <SheetContent side="left">
-          <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-            <MountainIcon className="h-6 w-6" />
-            <span className="sr-only">Acme Inc</span>
-          </Link>
-          <div className="grid gap-2 py-6">
-            <Link to="#" className="flex w-full items-center py-2 text-lg font-semibold" prefetch={false}>
-              Home
-            </Link>
-            <Link to="#" className="flex w-full items-center py-2 text-lg font-semibold" prefetch={false}>
-              About
-            </Link>
-            <Link to="#" className="flex w-full items-center py-2 text-lg font-semibold" prefetch={false}>
-              Services
-            </Link>
-            <Link to="#" className="flex w-full items-center py-2 text-lg font-semibold" prefetch={false}>
-              Contact
-            </Link>
-            <Link to="#" className="flex w-full items-center py-2 text-lg font-semibold" prefetch={false}>
-              Demander un transport
-            </Link>
-          </div>
-        </SheetContent>
-      </Sheet>
-      <Link href="#" className="mr-6 hidden lg:flex" prefetch={false}>
-        <MountainIcon className="h-6 w-6" />
-        <span className="sr-only">Acme Inc</span>
-      </Link>
-      <nav className="ml-auto hidden lg:flex gap-6">
-        <Link
-          to="/"
-          className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
-          prefetch={false}
-        >
-          Home
-        </Link>
-        <Link
-          to="/about-us"
-          className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
-          prefetch={false}
-        >
-          About
-        </Link>
-        <Link
-          to="/services"
-          className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
-          prefetch={false}
-        >
-          Services
-        </Link>
-        <Link
-          to="/contact"
-          className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
-          prefetch={false}
-        >
-          Contact
-        </Link>
-        <Link
-          to="/request-transport"
-          className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
-          prefetch={false}
-        >
-          Demandez un transport
-        </Link>
-      </nav>
-    </header>
-  )
-}
+import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { PlusIcon } from "lucide-react";
 
 function MenuIcon(props) {
   return (
@@ -90,34 +13,76 @@ function MenuIcon(props) {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="currentColor"
+      stroke="white"  // Adjusted color here
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <line x1="4" x2="20" y1="12" y2="12" />
-      <line x1="4" x2="20" y1="6" y2="6" />
-      <line x1="4" x2="20" y1="18" y2="18" />
+      <line x1="3" x2="21" y1="12" y2="12" />
+      <line x1="3" x2="21" y1="6" y2="6" />
+      <line x1="3" x2="21" y1="18" y2="18" />
     </svg>
-  )
+  );
 }
 
-
-function MountainIcon(props) {
+export default function Navbar() {
   return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-    </svg>
-  )
+    <header className="fixed top-0 left-0 w-full z-50 bg-blue-800 text-white shadow-md">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
+        {/* Logo et titre */}
+        <Link to="/" className="flex items-center gap-2">
+          <PlusIcon className="h-8 w-8 text-white" />
+          <span className="text-xl font-semibold">Mon-VSL</span>
+        </Link>
+
+        {/* Menu Hamburger pour mobile */}
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button variant="outline" size="icon" className="lg:hidden border-2 border-white text-white rounded-full">
+              <MenuIcon className="h-6 w-6" />
+              <span className="sr-only">Toggle navigation menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="bg-blue-800 text-white w-64">
+            <div className="grid gap-4 py-6 px-4">
+              <Link to="/" className="text-lg font-semibold hover:underline">
+                Accueil
+              </Link>
+              <Link to="/about-us" className="text-lg font-semibold hover:underline">
+                À propos de nous
+              </Link>
+              <Link to="/services" className="text-lg font-semibold hover:underline">
+                Services
+              </Link>
+              <Link to="/contact" className="text-lg font-semibold hover:underline">
+                Contact
+              </Link>
+              <Link to="/request-transport" className="text-lg font-semibold hover:underline">
+                Demander un transport
+              </Link>
+            </div>
+          </SheetContent>
+        </Sheet>
+
+        {/* Menu Desktop */}
+        <nav className="hidden lg:flex gap-6">
+          <Link to="/" className="text-sm font-medium px-4 py-2 hover:bg-blue-700 rounded-md">
+            Accueil
+          </Link>
+          <Link to="/about-us" className="text-sm font-medium px-4 py-2 hover:bg-blue-700 rounded-md">
+            À propos de nous
+          </Link>
+          <Link to="/services" className="text-sm font-medium px-4 py-2 hover:bg-blue-700 rounded-md">
+            Services
+          </Link>
+          <Link to="/contact" className="text-sm font-medium px-4 py-2 hover:bg-blue-700 rounded-md">
+            Contact
+          </Link>
+          <Link to="/request-transport" className="text-sm font-medium px-4 py-2 text-blue-800 bg-white hover:bg-gray-200 rounded-md">
+            Demander un transport
+          </Link>
+        </nav>
+      </div>
+    </header>
+  );
 }
